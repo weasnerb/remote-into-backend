@@ -215,6 +215,25 @@ exports.login = function (req, res) {
 };
 
 /**
+ * Check if user is logged in
+ * @param {*} req 
+ * @param {*} res 
+ */
+exports.isLoggedIn = function (req, res) {
+    if (req.session.user.id) {
+        return res.json({
+            'success': true,
+            'data': "User is logged in"
+        });
+    } else {
+        return res.status(400).json({
+            'success': false,
+            'message': "User is not logged in"
+        });
+    };
+}
+
+/**
  * Logout Current Session!
  * @param {*} req 
  * @param {*} res 

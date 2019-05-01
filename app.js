@@ -8,6 +8,8 @@ const express = require('express'),
   cookieParser = require('cookie-parser'),
   expressSession = require('express-session');
 
+  require('express-ws')(app);
+
 /**
  * Top Level Parser Settings
  */

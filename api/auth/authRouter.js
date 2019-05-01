@@ -9,6 +9,8 @@ router.post('/login', authController.login);
 
 router.post('/login/mfa', authController.verifyMfaToken);
 
+router.get('/isLoggedIn', authController.loginRequired, authController.isLoggedIn)
+
 router.post('/logout', authController.logout);
 
 router.post('/changePassword', authController.loginRequired, authController.changePassword);
